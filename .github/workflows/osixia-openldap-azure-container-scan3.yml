@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  scan-osixia/openldap:
+    runs-on: ubuntu-latest
+    steps:
+    #- uses: actions/checkout@master
+
+    #- run: docker build . -t my-app:${{ github.sha }}
+      
+    - uses: Azure/container-scan@v0
+      with:
+        image-name: osixia/openldap
